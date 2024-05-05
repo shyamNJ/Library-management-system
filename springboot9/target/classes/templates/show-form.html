@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<table border="2">
+		
+	    <th>Id</th>
+		<th>Name</th>
+		<th>BookNames</th>
+		<th>subject</th>
+		<th>publisher</th>
+		
+	</tr>
+	
+	<tr th:each="temp :${Libb}">
+		<td th:text="${temp.id}"></td>
+		<td th:text="${temp.name}"></td>
+		<td th:text="${temp.booknames}"></td>
+		<td th:text="${temp.subject}"></td>
+		<td th:text="${temp.publisher}"></td>
+		
+		
+		
+		<td><a th:href="@{delete-lib(id=${temp.id})}">Delete</a></td>
+		<td><a th:href="@{update-lib(id=${temp.id})}">Update</a></td>
+		
+		
+		
+		
+		
+	</tr>
+	<tr>
+		<a href="insert">Add BOOK</a>
+	</tr>
+		
+	</table>
+
+</body>
+</html>
